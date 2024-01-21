@@ -6,10 +6,13 @@ import Cards from './cards.js'
 import "@fontsource/kumbh-sans";
 import { useUser } from '@auth0/nextjs-auth0/client';
 import { useState, useEffect } from 'react';
+import { useRouter } from "next/navigation";
+import Link from 'next/link';
 import Modal from '@mui/material/Modal';
 
 export default function Dashboard() {
     const { user, error, isLoading } = useUser();
+    const router = useRouter();
 
     const [title, setTitle] = useState("");
     const [inputText, setInputText] = useState("");
@@ -32,6 +35,7 @@ export default function Dashboard() {
     }
 
     async function sendToGPTAndDB() {
+        handleClose();
         const response = await fetch('/api/gpt', {
             method: 'POST',
             headers: {
@@ -57,14 +61,28 @@ export default function Dashboard() {
     }, []);
 
 
-
-
     if (isLoading | fetchingFromMongo) return <div>loading...</div>;
     if (error) return <div>{error.message}</div>;
+
+    localStorage.setItem("cards", JSON.stringify(dbData[0]));
 
     return (
         <main className="flex min-h-screen flex-col items-center justify-between p-24" style={containerStyle}>
             <User />
+
+            <div>
+                {dbData[0].set.map((item, index) => (
+
+                    <Link
+                        href={{
+                            pathname: '/flashcards'
+                        }}
+                    >
+                        {item.name}
+                    </Link>
+                ))}
+            </div>
+            
 
             <button onClick={handleOpen}>create new set</button>
 
