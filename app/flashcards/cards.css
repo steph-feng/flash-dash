@@ -1,9 +1,29 @@
 .flash-card {
     font-size : 24px;
-    line-height : 72px;
-    width : 216px;
-    border : 1px solid black;
+    width : 500px;
+    height: 300px;
     margin : 18px;
-    background-color: pink;
+    background-color: white;
+    color : #55776D;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    line-height: 50px;  
+    padding: 0 2vmin;
+    
 }
+
+body {
+    background-color: #AFC0B5;
+    text-align: center;
+    
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+
+  h1 {
+    color: #55776D
+  }

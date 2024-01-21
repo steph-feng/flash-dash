@@ -1,6 +1,6 @@
 "use client";
 import React, { useState} from "react";
-import "./cards.css";
+
 
 export default function Card({frontSide, backSide}) {
     const [isFront, changeFace] = useState(true);
