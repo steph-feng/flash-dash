@@ -15,7 +15,7 @@ export default function Home() {
       <div className="flex flex-col items-center justify-center h-screen">
 
         <p style={{
-          color: '#3D3730',
+          color: 'black',
           textAlign: 'right',
           fontFamily: "Kumbh Sans",
           fontSize: '35px',
@@ -29,7 +29,7 @@ export default function Home() {
         <a href="/api/auth/login">
 
         <div style={{
-            backgroundColor: '#AFC0B5',
+            backgroundColor: '#EFEFF7',
             textAlign: 'center',
             position: 'relative',
             width: '150px',
@@ -38,7 +38,7 @@ export default function Home() {
             borderRadius: '10px',
            }}>
           <p style={{
-            color: '#3D3730',
+            color: 'black',
             fontFamily: '',
             fontSize: '18px',
             fontStyle: 'normal',
