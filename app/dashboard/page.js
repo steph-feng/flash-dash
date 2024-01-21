@@ -72,18 +72,20 @@ export default function Dashboard() {
 
             <div className='self-start'>
                 <p className='mb-5'>your flashcard decks:</p>
-                <div className='bg-[#AFC0B5] p-10 round text-center'>
-                    {dbData[0].set.map((item, index) => (
+                <Link
+                    href={{
+                        pathname: '/flashcards'
+                    }}
+                >
 
-                        <Link
-                            href={{
-                                pathname: '/flashcards'
-                            }}
-                        >
-                            {item.name}
-                        </Link>
-                    ))}
-                </div>
+                    <div className='bg-[#AFC0B5] p-10 round text-center'>
+                        {dbData[0].set.map((item, index) => (
+                            <p>{item.name}</p>
+                        ))}
+                    </div>
+
+                </Link>
+
             </div>
 
 
