@@ -1,5 +1,4 @@
 
-import Card from './card.jsx'
 
 const breakPoints = [
     { width: 1, itemsToShow: 1 },
