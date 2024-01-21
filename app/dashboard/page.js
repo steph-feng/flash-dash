@@ -5,6 +5,7 @@ import Modal from '@mui/material/Modal';
 
 export default function Dashboard() {
   const { user, error, isLoading } = useUser();
+  const [title, setTitle] = useState("");
   const [inputText, setInputText] = useState("");
   const [fetchingFromMongo, setFetchingFromMongo] = useState(true); 
   const [dbData, setDbData] = useState([]);
@@ -40,7 +41,7 @@ export default function Dashboard() {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ user: user.email, set: cards })
+      body: JSON.stringify({ user: user.email, set: {name: title, notes: cards }})
     });
   }
 
@@ -48,20 +49,25 @@ export default function Dashboard() {
        getFromMongoDB();
   }, []);
 
-  if (isLoading || fetchingFromMongo) return <div>Loading...</div>;
+  if (isLoading || fetchingFromMongo) return <div className='h-dvh'>Loading...</div>;
   if (error) return <div>{error.message}</div>;
 
   return (
     <div className='h-dvh flex flex-col justify-center items-center'>
         <div id="profileInfo" className="">
-            <p>welcome {user.name.split(" ")[0]}</p>
+            <p>welcome {user.name.split(" ")[0].toLowerCase()}</p>
         </div>
 
         <div id="scrollingFlashCardSets" className='flex flex-row' > 
         {
-        dbData.map((item, index) => (
-          <p key={index}>{item.set}</p>
-        ))
+        dbData.map((item, index) => {
+
+            let parsed = JSON.parse(item.set);
+            parsed.map((q, i) => {
+                <p>{q.name}</p>
+            })
+        }
+        )
         }
         </div>
 
@@ -74,10 +80,14 @@ export default function Dashboard() {
       >
         <div className='bg-[#AFC0B5] flex flex-col justify-center items-start p-8 rounded-lg drop-shadow'>
             <div>new flash card set</div>
+
             <div id="title" className='flex flex-row my-5'>
                 <p className='mr-3'>title:</p>
-                <input type='text' style={{width: "40vmin"}}/>
+                <input type='text' 
+                style={{width: "40vmin"}}
+                onChange={(e) => setTitle(e.target.value)}/>
             </div>
+
             <div id='upload' className='flex flex-col'>
                 <textarea 
                 placeholder='write or paste your notes here' 
