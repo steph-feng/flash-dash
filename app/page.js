@@ -1,4 +1,5 @@
-import BackgroundImage from './login-bg.png'
+import BackgroundImage from './login.png'
+import "@fontsource/kumbh-sans"; // Defaults to weight 400
 
 export default function Home() {
   const containerStyle = {
@@ -10,27 +11,36 @@ export default function Home() {
   };
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24" style={containerStyle}>
+    <main className="flex min-h-screen flex-col items-center justify-between p-24" style={containerStyle} >
       <div className="flex flex-col items-center justify-center h-screen">
 
         <p style={{
           color: '#3D3730',
           textAlign: 'right',
-          fontFamily: 'Lora, serif',
+          fontFamily: "Kumbh Sans",
           fontSize: '35px',
           fontStyle: 'normal',
           fontWeight: 500,
           lineHeight: 'normal',
-          marginBottom: '2rem', 
+          marginBottom: '1rem', 
         }}>
-         Welcome to SmartFlash
+         welcome to smart flash
         </p>
+        <a href="/api/auth/login">
 
-        <div style={{ textAlign: 'center', position: 'relative' }}>
+        <div style={{
+            backgroundColor: '#AFC0B5',
+            textAlign: 'center',
+            position: 'relative',
+            width: '150px',
+            height: '40px',
+            marginTop: '1vh',
+            borderRadius: '10px',
+           }}>
           <p style={{
             color: '#3D3730',
-            fontFamily: 'Lora, serif',
-            fontSize: '25px',
+            fontFamily: '',
+            fontSize: '18px',
             fontStyle: 'normal',
             fontWeight: 500,
             lineHeight: 'normal',
@@ -40,23 +50,10 @@ export default function Home() {
             left: '50%', 
             transform: 'translate(-50%, -50%)', 
           }}>
-            Login
+            login
           </p>
-
-          <a
-            href="/api/auth/login"
-            style={{
-              width: '250px',
-              height: '60px',
-              flexShrink: '0',
-              margin: 'auto',
-            }}
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="321" height="60" viewBox="0 0 321 60" fill="none">
-              <path d="M0 20C0 8.9543 8.9543 0 20 0H301C312.046 0 321 8.95431 321 20V40C321 51.0457 312.046 60 301 60H20C8.9543 60 0 51.0457 0 40V20Z" fill="#D2CBBB"/>
-            </svg>
-          </a>
         </div>
+        </a>
       </div>
     </main>
   );
