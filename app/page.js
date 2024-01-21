@@ -23,16 +23,40 @@ export default function Home() {
           lineHeight: 'normal',
           marginBottom: '2rem', 
         }}>
-        Welcome to SmartFlash
-      </p>
+         Welcome to SmartFlash
+        </p>
 
+        <div style={{ textAlign: 'center', position: 'relative' }}>
+          <p style={{
+            color: '#3D3730',
+            fontFamily: 'Lora, serif',
+            fontSize: '25px',
+            fontStyle: 'normal',
+            fontWeight: 500,
+            lineHeight: 'normal',
+            marginBottom: '2rem',
+            position: 'absolute',
+            top: '50%', 
+            left: '50%', 
+            transform: 'translate(-50%, -50%)', 
+          }}>
+            Login
+          </p>
 
-        <button type="button" className="text-[#3D3730] bg-[#D2CBBB] hover:bg-[#4285F4]/90 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 me-2 mb-2" href="/api/auth/login">
-          <svg className="w-4 h-4 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 19">
-            <path fillRule="evenodd" d="M8.842 18.083a8.8 8.8 0 0 1-8.65-8.948 8.841 8.841 0 0 1 8.8-8.652h.153a8.464 8.464 0 0 1 5.7 2.257l-2.193 2.038A5.27 5.27 0 0 0 9.09 3.4a5.882 5.882 0 0 0-.2 11.76h.124a5.091 5.091 0 0 0 5.248-4.057L14.3 11H9V8h8.34c.066.543.095 1.09.088 1.636-.086 5.053-3.463 8.449-8.4 8.449l-.186-.002Z" clipRule="evenodd"/>
-          </svg>
-          Sign in with Google
-        </button>
+          <a
+            href="/api/auth/login"
+            style={{
+              width: '250px',
+              height: '60px',
+              flexShrink: '0',
+              margin: 'auto',
+            }}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="321" height="60" viewBox="0 0 321 60" fill="none">
+              <path d="M0 20C0 8.9543 8.9543 0 20 0H301C312.046 0 321 8.95431 321 20V40C321 51.0457 312.046 60 301 60H20C8.9543 60 0 51.0457 0 40V20Z" fill="#D2CBBB"/>
+            </svg>
+          </a>
+        </div>
       </div>
     </main>
   );
