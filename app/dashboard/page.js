@@ -5,7 +5,7 @@ import Cards from './cards.js'
 import "@fontsource/kumbh-sans"; 
 import { useUser } from '@auth0/nextjs-auth0/client';
 // import { useState } from 'react';
-
+import Test from './test.js'
 
 export default function Dashboard() {
     const { user, error, isLoading } = useUser();
@@ -55,8 +55,7 @@ export default function Dashboard() {
     return (
         <main className="flex min-h-screen flex-col items-center justify-between p-24" style={containerStyle}>
             <User/>
-
-            
+            <Cards/>
         </main>
       );
 }
