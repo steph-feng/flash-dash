@@ -5,6 +5,7 @@ export async function POST(request) {
   const client = new MongoClient(process.env.MONGODB_URI);
   await client.connect();
   console.log("connected");
+  
   const database = client.db("flash-cards");
   const collection = database.collection("users");
 
