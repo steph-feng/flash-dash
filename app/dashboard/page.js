@@ -70,21 +70,25 @@ export default function Dashboard() {
         <main className="flex min-h-screen flex-col items-center justify-between p-24" style={containerStyle}>
             <User />
 
-            <div>
-                {dbData[0].set.map((item, index) => (
+            <div className='self-start'>
+                <p className='mb-5'>your flashcard decks:</p>
+                <div className='bg-[#AFC0B5] p-10 round text-center'>
+                    {dbData[0].set.map((item, index) => (
 
-                    <Link
-                        href={{
-                            pathname: '/flashcards'
-                        }}
-                    >
-                        {item.name}
-                    </Link>
-                ))}
+                        <Link
+                            href={{
+                                pathname: '/flashcards'
+                            }}
+                        >
+                            {item.name}
+                        </Link>
+                    ))}
+                </div>
             </div>
-            
 
-            <button onClick={handleOpen}>create new set</button>
+
+
+            <button onClick={handleOpen} className='self-end'>create new set</button>
 
             <Modal
                 open={open}
