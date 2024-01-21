@@ -4,7 +4,7 @@ Have you ever studied for an exam last minute? Got frustrated with hand making i
 ## What it does
 Upload a pdf of your notes and Flash Dash will generate the flash cards for you. Create a profile to store all your decks. Revisit them any time you're studying.
 
-## How we built it
+## How we built it 
 Tools that we used: Next.js, Node.js, MongoDB, Auth0, Open AI API, pdfcrowd, Vercel
 Our project is a Next.js app. Our user authentication is supported by Auth0. PDF upload and parsing is supported by pdfcrowd. The text parse of the PDF is passed as a prompt to the Open AI API. The resulting JSON object returned by the Open AI API is stored in our MongoDB database, and displayed on our webpage.
 
