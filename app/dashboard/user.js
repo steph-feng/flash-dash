@@ -38,23 +38,7 @@ export default function User() {
                     }}>
                     welcome, {user.name.toLowerCase()}
                 </p>
-                <a>
-                    <p style={{
-                        color: '#3D3730',
-                        textAlign: 'left',
-                        fontFamily: "Kumbh Sans",
-                        fontSize: '20px',
-                        fontStyle: 'normal',
-                        fontWeight: 500,
-                        lineHeight: 'normal',
-                        marginTop: '1vh',
-                        marginLeft: '2vw',
-                        marginBottom: '1rem', 
-                        flexShrink: '1',
-                        }}>
-                        account settings
-                    </p>
-                </a>
+                
 
             </div>
 
@@ -86,7 +70,7 @@ export default function User() {
                 marginBottom: '1vh', 
                 flexShrink: '1',
                 }}>
-                    5 day streak
+                    1 day streak
                 </p>
 
                 <p style={{

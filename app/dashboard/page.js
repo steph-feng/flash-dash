@@ -61,7 +61,7 @@ export default function Dashboard() {
     }, []);
 
 
-    if (isLoading | fetchingFromMongo) return <div>loading...</div>;
+    if (isLoading | fetchingFromMongo) return <div className='h-screen'>loading...</div>;
     if (error) return <div>{error.message}</div>;
 
     localStorage.setItem("cards", JSON.stringify(dbData[0]));
@@ -88,7 +88,7 @@ export default function Dashboard() {
 
 
 
-            <button onClick={handleOpen} className='self-end'>create new set</button>
+            <button onClick={handleOpen} className='self-end p-4 rounded-lg bg-[#EFEFF7]'>create new set</button>
 
             <Modal
                 open={open}
