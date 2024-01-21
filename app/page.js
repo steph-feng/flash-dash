@@ -15,7 +15,7 @@ export default function Home() {
       <div className="flex flex-col items-center justify-center h-screen">
 
         <p style={{
-          color: '3D3730',
+          color: '#3D3730',
           textAlign: 'right',
           fontFamily: "Kumbh Sans",
           fontSize: '35px',
@@ -38,7 +38,7 @@ export default function Home() {
             borderRadius: '10px',
            }}>
           <p style={{
-            color: '3D3730',
+            color: '#3D3730',
             fontFamily: '',
             fontSize: '18px',
             fontStyle: 'normal',
