@@ -9,7 +9,7 @@ export default function({questions}) {
 
     function handleClick() {
         console.log(pos)
-        setPos(oldState => oldState + 1);
+        setPos(oldState => (oldState + 1)%questions.length);
     }
 
     const q = questions[pos].question
